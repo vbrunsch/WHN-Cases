@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@master
+    - uses: actions/checkout@main
       with:
         persist-credentials: false 
         fetch-depth: 0 
@@ -48,7 +48,7 @@ jobs:
         git fetch
         git pull      
     - name: Push changes
-      uses: ad-m/github-push-action@master
+      uses: ad-m/github-push-action@main
       with:
         branch: "main"
         github_token: ${{ secrets.GITHUB_TOKEN }}
