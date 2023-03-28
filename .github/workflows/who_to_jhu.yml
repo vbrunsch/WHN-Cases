@@ -4,8 +4,8 @@
 name: Update WHO data to JHU format
 
 on:
-  push:
-    branches: [ main ]
+  #push:
+    #branches: [ main ]
   schedule:
     - cron: '25 19 * * *'
 
