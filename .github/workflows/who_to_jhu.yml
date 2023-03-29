@@ -4,8 +4,8 @@
 name: Update WHO data to JHU format
 
 on:
-  push:
-    branches: [ main ]
+  #push:
+    #branches: [ main ]
   schedule:
     - cron: '25 19 * * *'
 
@@ -37,6 +37,7 @@ jobs:
     - name: Process Data
       run: |
         python who_to_jhu.py
+        python who_to_jhu_deaths.py
         
     #- uses: actions/checkout@v3
     #- run: |
