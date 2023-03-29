@@ -2,7 +2,8 @@ import pandas as pd
 import numpy as np
 
 # Get death time series from JHU
-jhu = pd.read_csv(f'https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_global.csv')
+jhu = pd.read_csv('jhu_deaths.csv')
+#jhu = pd.read_csv(f'https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_global.csv')
 #print(jhu)
 
 # Get data from WHO
