@@ -83,7 +83,13 @@ wh_in_jhu = wh_in_jhu.drop(57)
 wh_in_jhu.iloc[9] = wh_in_jhu.iloc[17]
 wh_in_jhu = wh_in_jhu.drop(17).reset_index(drop=True)
 
-#set entries for all dates to zero for rows where state/province has entries
-wh_in_jhu.loc[wh_in_jhu['Province/State'].notnull(), wh_in_jhu.columns[5:]] = 0
+#set entries for all dates to zero for rows where state/province has entries - does not work properly for some reason
+#wh_in_jhu.loc[wh_in_jhu['Province/State'].notnull(), wh_in_jhu.columns[5:]] = 0
+
+# get inidces for all rows with entries in province/state column
+wh_in_jhu_state = wh_in_jhu[wh_in_jhu['Province/State'].notnull()].index.tolist()
+
+# set all rows to zero with indices in wh_in_jhu_state, except for first 4 columns
+wh_in_jhu.iloc[wh_in_jhu_state, 4:] = 0
 
 wh_in_jhu.to_csv('who_new.csv')
