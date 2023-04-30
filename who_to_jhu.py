@@ -31,6 +31,7 @@ wh['Country/Region'] = wh['Country/Region'].replace({'Bolivia (Plurinational Sta
                 'Myanmar': 'Burma',
                 'Brunei Darussalam': 'Brunei',
                 'Congo': 'Congo (Brazzaville)',
+                'Democratic Republic of the Congo': 'Congo (Kinshasa)',
                 'Côte d’Ivoire': 'Cote d\'Ivoire',
                 'Iran (Islamic Republic of)': 'Iran',
                 'Democratic People\'s Republic of Korea': 'Korea, North',
