@@ -31,6 +31,7 @@ wh['Country/Region'] = wh['Country/Region'].replace({'Bolivia (Plurinational Sta
                 'Myanmar': 'Burma',
                 'Brunei Darussalam': 'Brunei',
                 'Congo': 'Congo (Brazzaville)',
+                'Democratic Republic of the Congo': 'Congo (Kinshasa)',
                 'Côte d’Ivoire': 'Cote d\'Ivoire',
                 'Iran (Islamic Republic of)': 'Iran',
                 'Democratic People\'s Republic of Korea': 'Korea, North',
@@ -38,6 +39,7 @@ wh['Country/Region'] = wh['Country/Region'].replace({'Bolivia (Plurinational Sta
                 'Kosovo[1]': 'Kosovo',
                 'Lao People\'s Democratic Republic': 'Laos',
                 'Micronesia (Federated States of)': 'Micronesia',
+                'occupied Palestinian territory, including east Jerusalem': 'West Bank and Gaza',
                 'Republic of Moldova': 'Moldova',
                 'Russian Federation': 'Russia',
                 'Syrian Arab Republic': 'Syria',
@@ -91,5 +93,8 @@ wh_in_jhu = wh_in_jhu.drop(17).reset_index(drop=True)
 wh_in_jhu_state = wh_in_jhu[wh_in_jhu['Province/State'].notnull()].index.tolist()
 # set all rows to zero with indices in wh_in_jhu_state, except for first 4 columns
 wh_in_jhu.iloc[wh_in_jhu_state, 4:] = 0
+
+# set rows to zero of Antarctica, Diamond Princess, MS Zaandam, Summer Olympics 2020, Taiwan*, Winter Olympics 2022, that is rows 5, 106, 175, 244, 249, 285
+wh_in_jhu.iloc[[5, 106, 175, 244, 249, 285], 4:] = 0
 
 wh_in_jhu.to_csv('who_new_deaths.csv')
